@@ -1,0 +1,563 @@
+<a href="./test.html" target="_blank">test</a>
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+<title>코딩맵</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: break-all;
+  }
+
+  [id^=section]{
+    padding-top:40px;
+  }
+
+  h2 {
+    color: #000;
+  }
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fff;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #0f3961;
+    color: white;
+    text-align: center;
+  }
+
+  .highlight {
+    color: #B23434;
+    font-weight: bold;
+  }
+
+  td {
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  table th:nth-child(1),
+  table td:nth-child(1),
+  table th:nth-child(2),
+  table th:nth-child(3),
+  table th:nth-child(5), 
+  table th:nth-child(6),
+  table td:nth-child(2),
+  table td:nth-child(3),
+  table td:nth-child(5), 
+  table td:nth-child(6){
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fff;
+  }
+
+  .space{
+    padding-left: 15px;
+    padding-right: 5px;
+  }
+
+  .pageCount{font-size: 16px; margin-top: 30px; display: flex; gap: 10px;}
+  .pageCount span{font-weight: bold;}
+
+  /* 사이드바 */
+  .sidebar {width: 300px; right: -300px; height: auto; transition: right 0.4s ease; max-height: 100vh; position: fixed;top: 0; background-color: #f8f9fa;padding: 20px;box-shadow: -2px 0 5px rgba(0,0,0,0.1);}
+  .sidebar ul {list-style-type: none;padding: 0;margin: 0;}
+  .sidebar ul li {margin-bottom: 10px;}
+  .sidebar ul li a {text-decoration: none;color: #333;padding: 10px;display: block;border-radius: 5px;transition: background-color 0.3s, color 0.3s;}
+  .sidebar ul li a:hover, .sidebar ul li a.on  {background-color: #0f3961;color: white;}
+  
+  .sidebar.on{right: 0;}
+  .sidebar .sideBarBtn{cursor: pointer; width: 24px; height: 100px; color: #fff; border:0; position: absolute; left:-24px; top:0; border-radius: 12px 0 0 12px; background-color: #0f3961; opacity: 0.8;}
+  .sidebar .sideBarBtn.on{opacity: 1;}
+  
+  .conWrap{width: calc(100% - 300px); transition: width 0.4s ease;}
+  .w100p{width: 100% !important;}
+
+  .hide {display: none !important;}
+
+  @media screen and (max-width: 1024px){
+    body{padding:0 12px;}
+    .conWrap, .conWrap.w100p{width: 100% !important;}
+    [id^=section]{padding-top:12px;}
+    .pageCount{display: block;}
+    table *{font-size: 14px;}
+    table tr > *:nth-child(2),
+    table tr > *:nth-child(4),
+    table tr > *:nth-child(5),
+    table tr > *:nth-child(6),
+    table tr > *:nth-child(7){ display: none;}
+
+    table colgroup col:nth-child(2),
+    table colgroup col:nth-child(4),
+    table colgroup col:nth-child(5),
+    table colgroup col:nth-child(6),
+    table colgroup col:nth-child(7){display:none;}
+
+    table colgroup col:nth-child(1){width: 130px;}
+    table colgroup col:nth-child(3){width:calc(100% - 130px); }
+
+    .sidebar{width: 50%; padding:5px; right: -50%;}
+    .sidebar.on{right:0;}
+    .sidebar ul li a{ font-size: 14px; padding:5px;}
+    .sidebar ul li a:hover{background-color: transparent; color: #000;}
+    
+  }
+</style>
+<script>
+  // 스크롤 슬로우
+  document.addEventListener("DOMContentLoaded", function() {
+    // 페이지 로드 완료 후 이벤트 리스너 등록
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        // a 태그의 기본 동작(링크 이동)을 방지
+        e.preventDefault();
+
+        // 이동할 섹션의 ID를 가져옴
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          // 스무스 스크롤링을 위해 scrollIntoView 메서드 사용
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+
+  //페이지 갯수 받아오기
+    // 페이지가 로드될 때 tr 갯수를 세고 페이지 수를 계산하여 출력합니다.
+    window.onload = function() {
+        countTRs();
+    }
+
+    function countTRs() {
+        // tbody 내의 tr 태그의 개수를 찾습니다.
+        var highlightElements = document.querySelectorAll('tbody tr');
+        var pageCount = highlightElements.length;
+
+        // 총 페이지 수(allPageCount) 설정
+        document.getElementById('allPageCount').textContent = 0;
+
+        // 퍼블리싱 완료된 페이지 수(pageCount) 설정
+        document.getElementById('pageCount').textContent = pageCount;
+
+        // 남은 페이지 수(rePageCount) 설정 (앞 pageCount 총페이지수로 변경)
+        var remainingPages = pageCount - pageCount; 
+        document.getElementById('rePageCount').textContent = remainingPages;
+    }
+
+    // 사이드바 온오프
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('sidebar');
+      const toggleBtn = document.querySelector('.sideBarBtn');
+      const conWrap = document.querySelector('.conWrap');
+
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('on');
+
+        // 사이드바 상태에 따라 버튼 내용 변경
+        if (sidebar.classList.contains('on')) {
+          toggleBtn.innerHTML = '&gt;'; // 사이드바가 보일 때
+          toggleBtn.classList.add('on');
+          conWrap.classList.remove('w100p');
+        } else {
+          toggleBtn.innerHTML = '&lt;'; // 사이드바가 숨겨질 때
+          toggleBtn.classList.remove('on');
+          conWrap.classList.add('w100p');
+        }
+      });
+    });
+
+</script>
+</head>
+<body id="section00">
+
+<h2>IA - 코딩맵</h2>
+<div class="sidebar" id="sidebar">
+  <button class="sideBarBtn">&lt;</button>
+  <ul>
+    <li><a href="#section00">처음으로</a></li>
+    <li><a href="#section01">메인</a></li>
+    <li><a href="#section02">이체</a></li>
+    <li><a href="#section03">전체계좌조회</a></li>
+    <li><a href="#section04">상품가입</a></li>
+    <li><a href="#section05">거래내역조회</a></li>
+  </ul>
+</div>
+
+
+<div class="conWrap w100p">
+  
+  <!-- 작업내용확인 -->
+  <div class="pageCount">
+    <p class="hide">총페이지 - <span id="allPageCount"></span></p>
+    <p>퍼블리싱완료 - <span id="pageCount"></span></p>
+    <p class="hide">남은페이지 - <span id="rePageCount"></span></p>
+  </div>
+  
+  <div id="section01">
+    <h3>메인</h3>
+    <table>
+      <colgroup>
+        <col width="250">
+        <col width="200">
+        <col width="250">
+        <col width="150">
+        <col width="270">
+        <col width="250">
+        <col width="100">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>화면명</th>
+          <th>디렉토리</th>
+          <th>파일명</th>
+          <th>완료일</th>
+          <th>수정일 및 내용</th>
+          <th>비고</th>
+          <th>작업자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>메인</td>
+          <td>/page/main</td>
+          <td><a href="./page/main/index.html" target="_blank">index.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td> - 거래정지</td>
+          <td>/page/main</td>
+          <td><a href="./page/main/index_stop.html" target="_blank">index_stop.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td> - 입출금 계좌X</td>
+          <td>/page/main</td>
+          <td><a href="./page/main/FR_01_002_01.html" target="_blank">FR_01_002_01.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td> - 이체,거래내역X</td>
+          <td>/page/main</td>
+          <td><a href="./page/main/FR_01_002_02.html" target="_blank">FR_01_002_02.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="section02">
+    <h3>이체</h3>
+    <table>
+      <colgroup>
+        <col width="250">
+        <col width="200">
+        <col width="250">
+        <col width="150">
+        <col width="270">
+        <col width="250">
+        <col width="100">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>화면명</th>
+          <th>디렉토리</th>
+          <th>파일명</th>
+          <th>완료일</th>
+          <th>수정일 및 내용</th>
+          <th>비고</th>
+          <th>작업자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>받는사람정보입력</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_01.html" target="_blank">FR_01_004_01.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td class="highlight">input 공통</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_01_input.html" target="_blank">FR_01_004_01_input.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>금액입력</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_02.html" target="_blank">FR_01_004_02.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+
+        <tr>
+          <td>입력사항 확인</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_03.html" target="_blank">FR_01_004_03.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>입력사항 추가인증</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_03_1.html" target="_blank">FR_01_004_03_1.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>입력사항 인증완료(2단계인증 팝업)</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_03_2.html" target="_blank">FR_01_004_03_2.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>완료</td>
+          <td>/page/send</td>
+          <td><a href="./page/send/FR_01_004_04.html" target="_blank">FR_01_004_04.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="section03">
+    <h3>전체계좌조회</h3>
+    <table>
+      <colgroup>
+        <col width="250">
+        <col width="200">
+        <col width="250">
+        <col width="150">
+        <col width="270">
+        <col width="250">
+        <col width="100">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>화면명</th>
+          <th>디렉토리</th>
+          <th>파일명</th>
+          <th>완료일</th>
+          <th>수정일 및 내용</th>
+          <th>비고</th>
+          <th>작업자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>전체계좌조회</td>
+          <td>/page/allaccount</td>
+          <td><a href="./page/allaccount/FR_01_002_03.html" target="_blank">FR_01_002_03.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>전체계좌조회 신규</td>
+          <td>/page/allaccount</td>
+          <td><a href="./page/allaccount/FR_01_002_04.html" target="_blank">FR_01_002_04.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>전체계좌조회 입출금통장X</td>
+          <td>/page/allaccount</td>
+          <td><a href="./page/allaccount/FR_01_002_05.html" target="_blank">FR_01_002_05.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="section04">
+    <h3>상품가입</h3>
+    <table>
+      <colgroup>
+        <col width="250">
+        <col width="200">
+        <col width="250">
+        <col width="150">
+        <col width="270">
+        <col width="250">
+        <col width="100">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>화면명</th>
+          <th>디렉토리</th>
+          <th>파일명</th>
+          <th>완료일</th>
+          <th>수정일 및 내용</th>
+          <th>비고</th>
+          <th>작업자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>상품가입-정기예금</td>
+          <td>/page/product</td>
+          <td><a href="./page/product/FR_01_005_01.html" target="_blank">FR_01_005_01.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>상품가입-보통예금</td>
+          <td>/page/product</td>
+          <td><a href="./page/product/FR_01_005_02.html" target="_blank">FR_01_005_02.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>상품가입-정기적금</td>
+          <td>/page/product</td>
+          <td><a href="./page/product/FR_01_005_03.html" target="_blank">FR_01_005_03.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="section05">
+    <h3>거래내역조회</h3>
+    <table>
+      <colgroup>
+        <col width="250">
+        <col width="200">
+        <col width="250">
+        <col width="150">
+        <col width="270">
+        <col width="250">
+        <col width="100">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>화면명</th>
+          <th>디렉토리</th>
+          <th>파일명</th>
+          <th>완료일</th>
+          <th>수정일 및 내용</th>
+          <th>비고</th>
+          <th>작업자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>입출금,예금 최초접속시</td>
+          <td>/page/transhistory</td>
+          <td><a href="./page/transhistory/FR_01_003_01.html" target="_blank">FR_01_003_01.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>대출 최초접속시</td>
+          <td>/page/transhistory</td>
+          <td><a href="./page/transhistory/FR_01_003_02.html" target="_blank">FR_01_003_02.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>예적금 최초접속시</td>
+          <td>/page/transhistory</td>
+          <td><a href="./page/transhistory/FR_01_003.html" target="_blank">FR_01_003.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+        <tr>
+          <td>조회 조건 없음</td>
+          <td>/page/transhistory</td>
+          <td><a href="./page/transhistory/FR_01_003_03.html" target="_blank">FR_01_003_03.html</a></td>
+          <td>2024-07-26</td>
+          <td>-</td>
+          <td></td>
+          <td>김경준</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
