@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- js -->
+    <script type="text/javascript" src="../../html/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../html/js/slick.js"></script>
+    <script type="text/javascript" src="../../html/js/content.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../html/css/slick.css">
+    <link rel="stylesheet" href="../../html/css/reset.css">
+    <link rel="stylesheet" href="../../html/css/common.css">
+    <link rel="stylesheet" href="../../html/css/style.css">
+
+
+    <title>OSB은행 간편모드</title>
+</head>
+<body>
+    <div class="whiteWrap">
+        <header>
+            <div class="headerWrap">
+                <div class="headerL">
+                   <button class="backBtn"><span class="hide">뒤로가기</span></button>
+                </div>
+                <div class="headerC"><h1>이체</h1></div>
+                <div class="headerR"></div>
+            </div>
+        </header>
+
+
+        <!-- con -->
+        <section>
+            <div class="conWrap">
+                <div class="conBox">
+                    <div class="conTop">
+                        <div class="topNavWrap">
+                            <div class="navName">입력사항 확인</div>
+                            <div class="navIng">
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on number">3</span>
+                            </div>
+                        </div>
+                        <div class="inner pb0">
+                            <!-- 240726 fz24 color-17 bold mb10 pt14 -> whoSend01 변경  -->
+                            <p class="whoSend01">OSB(당행) 홍길동님에게</p>
+                            <p class="whoSend02">
+                                <span class="num">500,000,000</span>원<span class="color-main">을 이체합니다.</span>
+                            </p>
+                            <!-- 240726 mt55 -> mt62 -->
+                            <div class="tblWrap mt62">
+                                <table class="tbl-form">
+                                    <caption class="hide">입금계좌, 출금계좌, 수수료, 보내는분 통장표시, 받는분 통장표시 테이블</caption>
+                                    <colgroup>
+                                        <!-- 240726 너비디자인수정 -->
+                                        <col style="width: 48.75%">
+                                        <col>
+
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">입금계좌</th>
+                                            <td>OSB(당행)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">출금계좌</th>
+                                            <td>03156-13-456787</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">수수료</th>
+                                            <td>0원</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">보내는분 통장표시</th>
+                                            <td><button class="selBtn openBtn" data-target="#passSend">홍길동길동길동</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">받는분 통장표시</th>
+                                            <td><button class="selBtn openBtn" data-target="#getSend">홍길동</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- 240726 mt40 fz20 bold lineH13 -> Certtxt01 -->
+                            <p class="Certtxt01">
+                                현재 본인확인 추가인증 대상 고객이므로,
+                                아래 수단 중 1개 방법을 선택하여 추가 인증을 
+                                진행해주세요. 
+                            </p>
+                            <!-- 240726 mt30 -> mt23 -->
+                            <div class="checkTabWrap onCheckBtn mt23" role="tablist" aria-label="인증 방법">
+                                <a href="#tab1-1" class="on" id="tab1-1" role="tab" aria-controls="panel1-1" aria-selected="true">SMS 인증</a>
+                                <a href="#tab1-2" id="tab1-2" role="tab" aria-controls="panel1-2" aria-selected="false">ARS 인증</a>
+                                <a href="#tab1-3" id="tab1-3" role="tab" aria-controls="panel1-3" aria-selected="false">해외체류자</a>
+                            </div>
+                            <div class="tabConWrap">
+                                <div id="panel1-1" class="tabCon01" role="tabpanel" aria-labelledby="tab1-1" aria-hidden="false">
+                                    <!-- 240726 h200 d-flex align-center justify-center flex-column -> sendBtmTabBox변경 -->
+                                    <div class="sendBtmTabBox">
+                                        <!-- 240726 fz20 color-333 text-c -> tellNum변경 -->
+                                        <p class="tellNum">이동전화 010-1234-****</p>
+                                        <!-- 240726 변경 -->
+                                        <div class="d-flex justify-center mt27">
+                                            <button class="comBtn">SMS 인증요청</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="panel1-2" class="tabCon02" role="tabpanel" aria-labelledby="tab1-2" aria-hidden="true">
+                                    <!-- 240726 h200 d-flex align-center justify-center flex-column -> sendBtmTabBox변경 -->
+                                    <div class="sendBtmTabBox">
+                                        <div class="w100p">
+                                            <select name="" id="" class="select">
+                                                <option value="">010-2345-****</option>
+                                            </select>
+                                            <div class="d-flex justify-center mt20">
+                                                <button class="comBtn">ARS 인증요청</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="panel1-3" class="tabCon03" role="tabpanel" aria-labelledby="tab1-3"  aria-hidden="true">
+                                    <!-- 240726 h200 d-flex align-center justify-center flex-column -> sendBtmTabBox변경 -->
+                                    <div class="sendBtmTabBox">
+                                        <div class="text-c">
+                                            <button class="comBtn">해외체류자 인증요청</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conBtm">
+                        <div class="inner pt0">
+                            <button class="bigBtn basicBtn" disabled>
+                                2단계 인증 후 이체하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- con// -->
+
+        <footer>
+            <div class="footerWrap">
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- 하단 팝업 보내는 분 -->
+    <div class="layerPopWrap" id="passSend">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">보내는분 통장표시 변경</h3>
+            <div class="popListBox">
+                <div>
+                    <input type="text" class="input num mt30" placeholder="한글 10자리 입력">
+                    <div class="pt40 pb33">
+                        <button class="bigBtn basicBtn">
+                            확인
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 하단 팝업 받는 분 -->
+    <div class="layerPopWrap" id="getSend">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">받는분 통장표시 변경</h3>
+            <div class="popListBox">
+                <div>
+                    <input type="text" class="input num mt30" placeholder="한글 10자리 입력">
+                    <div class="pt40 pb33">
+                        <button class="bigBtn basicBtn">
+                            확인
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+         $(document).ready(function() {
+            function setupTabs($tabMenu) {
+                $tabMenu.find('[role="tab"]').on('click', function(e) {
+                    e.preventDefault();
+
+                    // 모든 탭과 패널을 비활성화
+                    $tabMenu.find('[role="tab"]').attr('aria-selected', 'false');
+                    $tabMenu.next('.tabConWrap').find('[role="tabpanel"]').attr('aria-hidden', 'true');
+
+                    // 선택된 탭과 해당 패널을 활성화
+                    $(this).attr('aria-selected', 'true');
+                    $('#' + $(this).attr('aria-controls')).attr('aria-hidden', 'false');
+                });
+
+                // 키보드 내비게이션 지원
+                $tabMenu.find('[role="tab"]').on('keydown', function(e) {
+                    const key = e.which || e.keyCode;
+                    const $tabs = $tabMenu.find('[role="tab"]');
+                    const index = $tabs.index(this);
+
+                    if (key === 37 || key === 38) { // Left or Up arrow
+                        e.preventDefault();
+                        $tabs.eq(index - 1 >= 0 ? index - 1 : $tabs.length - 1).focus().click();
+                    } else if (key === 39 || key === 40) { // Right or Down arrow
+                        e.preventDefault();
+                        $tabs.eq((index + 1) % $tabs.length).focus().click();
+                    }
+                });
+            }
+
+            // 모든 탭 메뉴에 대해 설정 적용
+            $('.checkTabWrap').each(function() {
+                setupTabs($(this));
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/* 하단팝업 */
+.layerPopWrap { position: fixed; width: 100%; height: calc(100dvh - 5rem); left: 0; bottom: -100%; z-index: 999; }
+.layerPopWrap.on{background-color: rgba(0, 0, 0, 0.6); bottom: 0; }
+.layerPopWrap.on .layerBox{bottom: 0;}
+.layerPopWrap .layerBox {position: absolute; bottom: -100%; flex: 1; width: 100%; height: auto; max-height: calc(100% - 9rem); padding: 2rem; padding-bottom: 0; background-color: #fff; border-radius: 2.4rem 2.4rem 0 0; transition: 0.4s ease bottom;}
+
+.popTit { font-size: 2.6rem; font-weight: 700; text-align: center; padding-bottom: 2.3rem; border-bottom: 1px solid #bfc3c8; }
+.popListBox { width: 100%; max-height: calc(100dvh - 21rem); overflow-y: auto; position: relative; padding-bottom: 7.3rem;}
+
+.popAccoList{width: 100%;}
+.popAccoList li{border-bottom: 1px solid #ddd; padding: 3rem 0;}
+.popAccoList li .text-r{margin-top: 2rem;}
+.popAccoList li:last-child{border-bottom: 0;}
+
+.popAccoList .accMoney{font-size: 2.6rem; font-weight: 500; color: #171717; padding-top: 1rem;}
+.popAccoList .accMoney span{font-size: 2.6rem; font-weight: bold; color: #1d1d1d;}
+.popAccoList .accoNum{font-size: 1.6rem; font-weight: 500; color: #777; margin-top: 1rem;}
+.popAccoList .depositName{font-size: 2rem; font-weight: 500; display: flex; align-items: center; color: #171717;}
+
+/* 계좌, 조회결과 없을떄 */
+.notList { width: 100%; height: 100%; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding:9rem 0;}
+.notList img { width: 5.3rem; }
+.notList p { font-size: 1.8rem; font-weight: 500; padding-top: 3rem; color: #656565; }
+
+/* 보이스피싱 경고 */
+.psWarning { width: 100%; height: 100%; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding:5.8rem 0 3rem;}
+.psWarning .btnWrap2{padding-top:5.5rem;}
+.psWarning img{width: 7.1rem;}
+.psWarningTxt1{font-size: 2rem; color: #000; margin:3rem 0 1.5rem; line-height: 1.3; font-weight: 500;}
+.psWarningTxt1 span{font-size: 2rem; font-weight: 500;}
+
+.psWarningTxt2{font-size: 2.4rem; color: #000; font-weight: 700;}
+.psWarningTxt2 span{font-weight: 700;}
+
+.closeBtn { width: 3.4rem; height: 3.4rem; background: url('../img/ico-close.png'); background-size: 100% 100%; position: absolute; top: -5.6rem; left: 0; right: 0; margin: auto; }
+
+.popAccoList .badge{ padding: 0 0.87rem; height: 30px; line-height: 28px; margin-right: 1rem; vertical-align: top; display: inline-block; justify-content: center; align-items: center; font-size: 15px; border:1px solid; border-radius: 2rem;}
+.popAccoList .badge.green{border-color: #046d55; color: #046d55;}
+.popAccoList .badge.blue{border-color: #0173b4; color: #0173b4;}
+.popAccoList .badge.deepr{border-color: #ce4747; color: #ce4747;}
+.popAccoList .badge.purple{border-color: #4c1f9f; color: #4c1f9f;}
+
+
+/* 스크롤바 숨기기 */
+
+.popListBox::-webkit-scrollbar {
+  width: 0; 
+  background: transparent;
+  display: none;
+}
+
+.popListBox::-webkit-scrollbar-track {
+  width: 0; 
+  background: transparent;
+  display: none;
+}
+
+.popListBox::-webkit-scrollbar-thumb {
+  width: 0; 
+  background: transparent;
+  display: none;
+}
+
+/* table */
+
+/* 가로형 테이블 */
+.tbl-form { table-layout: fixed; width: 100%; }
+.tbl-form th, .tbl-form td { height: 6rem; vertical-align: middle; text-align: left; border: 1px solid #a2a2a2; font-size: 2rem; color: #333; font-weight: 500;}
+.tbl-form th { padding:0.5rem 0.5rem 0.6rem 1.6rem; background-color: #ededed; word-break: break-word; overflow-wrap: break-word; white-space: normal;}
+.tbl-form td { padding:0.5rem 0.5rem 0.6rem 1.6rem; 
+  text-overflow: ellipsis;white-space: nowrap; max-width: 100%; overflow: hidden;}
+
+.selBtn{width: 100%; height: 100%; font-size: 2rem; font-weight: 500; text-align: left; background: url(../img/ico-select-down.png) right 1rem center no-repeat; background-size: 1.6rem auto; padding-right: 2.6rem;
+  overflow: hidden;display: inline-block;max-width: 100%;text-overflow: ellipsis;white-space: nowrap; color: #333;
+}
+
+/* 세로형 테이블 */
+.tbl-list { table-layout: fixed; width: 100%; }
+.tbl-list th, .tbl-list td { height: 6rem; vertical-align: middle; text-align: center; border: 1px solid #a2a2a2; font-size: 2rem; color: #333; font-weight: 500;}
+.tbl-list thead th {background-color: #ededed; border-bottom: 0; word-break: break-word; overflow-wrap: break-word; white-space: normal;}
+.tbl-list tbody th, 
+.tbl-list tbody td {
+  text-overflow: ellipsis;white-space: nowrap; max-width: 100%; overflow: hidden;}
+
+/* tab */
+.checkTabWrap{display: flex; gap: 1rem;}
+.checkTabWrap.mt23{margin-top: 2.3rem;}
+.checkTabWrap a{display: flex; justify-content: center; align-items: center; width: 100%; height: 42px; line-height: 40px;  background: #e1e1e1; border: 1px solid #e1e1e1; color: #050505; font-size: 1.9rem; border-radius: 2rem; font-weight: 500;}
+.checkTabWrap a.on{background: #0f3b62; border: 1px solid #0f3b62; color: #fff;}
+
+.tabConWrap{min-height: 16rem;}
+.tabConWrap [role="tabpanel"] { display: none; }
+.tabConWrap [role="tabpanel"][aria-hidden="false"] { display: block; }
+
+
+/* new레이어 팝업 */
+.layerPopWrap2{position: fixed; width: 100%; height: 100dvh; background: rgba(0, 0, 0, 0.6); z-index: 1001; left: 0; top: 0; display: flex; align-items: center; justify-content: center; padding:2rem;}
+.layerPopWrap2 .popInfo{position: relative; background: #fff; padding: 2.4rem; border-radius: 0.8rem; box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25);}
+
+.popHead {padding-bottom: 0.8rem; margin-bottom: 1.6rem; border-bottom: 1px solid #ccc;}
+.popHead .popTop{display: flex; width: 100%; justify-content: center;}
+.popHead .popCloseBtn { width: 1.7rem; height: 1.7rem; background: url('../img/ico-close-black.svg') center center no-repeat;
+position: absolute; right: 2.4rem; top: 2.4rem;}
+
+.popHead h3{text-align: center; font-size: 2.4rem; color: #0F3961; line-height: 3.5rem; margin-top: 1.6rem;}
+
+.poptxt01{font-size: 1.8rem; line-height: 2.6rem; margin-bottom: 1.6rem; color: #000;}
+
+.skyBlueBox{background: #EEF4FA; border-radius:0.8rem; padding: 2.4rem; }
+
+.skyBlueBox p{font-size: 1.6rem; color: #000; line-height: 2.3rem;}
+.skyBlueBox p+p{margin-top: 1.6rem;}
+
+.popFoot{display: flex; justify-content: flex-end; padding-top: 1.6rem;}
+
+/* 기본 스타일을 위한 CSS */
+.checkbox { display: none; /* 체크박스를 숨깁니다 */
+}
+.checkbox + label { display: flex; align-items: center; cursor: pointer; color: #000; font-size: 1.6rem;}
+.checkbox + label::before { content: ""; display: inline-block; width: 2rem; height: 2rem; margin-right: 0.5rem; border: 1px solid #ccc; background-size: contain; background-repeat: no-repeat; border-radius: 0.2rem;}
+.checkbox:checked + label::before { background-image: url('../img/ico-checkbox.svg'); /* 체크되었을 때 이미지 */}

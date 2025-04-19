@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- js -->
+    <script type="text/javascript" src="../../html/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../html/js/slick.js"></script>
+    <script type="text/javascript" src="../../html/js/content.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../html/css/slick.css">
+    <link rel="stylesheet" href="../../html/css/reset.css">
+    <link rel="stylesheet" href="../../html/css/common.css">
+    <link rel="stylesheet" href="../../html/css/style.css">
+
+
+    <title>OSB은행 간편모드</title>
+</head>
+<body>
+    <div class="whiteWrap">
+        <header>
+            <div class="headerWrap">
+                <div class="headerL">
+                   <button class="backBtn"><span class="hide">뒤로가기</span></button>
+                </div>
+                <div class="headerC"><h1>이체</h1></div>
+                <div class="headerR"></div>
+            </div>
+        </header>
+
+
+        <!-- con -->
+        <section>
+            <div class="conWrap">
+                <div class="conBox">
+                    <div class="conTop">
+                        <div class="topNavWrap">
+                            <div class="navName">받는 사람 정보</div>
+                            <div class="navIng">
+                                <span class="number on">1</span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="inner pb0">
+                            <!-- 240726 fz26 bold -> ingTit -->
+                            <p class="ingTit">
+                                <span class="color-000">누구에게</span> <span class="color-main">보낼까요?</span>
+                            </p>
+
+                            <p class="labelTit">입금은행선택</p>
+                            <div class="sendTabWrap tab4 onCheckBtn">
+                                <button class="on">직접입력</button>
+                                <button class="openBtn" data-target="#recentSend">최근</button>
+                                <button class="">자주</button>
+                                <button class="openBtn" data-target="#mySend">내계좌</button>
+                            </div>
+                            <div class="selectBox mt10">
+                                <select name="" id="" class="select">
+                                    <option value="0">(000) 당행</option>
+                                </select>
+                            </div>
+
+                            <p class="labelTit">입금계좌번호</p>
+                            <div class="inputBox">
+                                <input type="text" class="input" placeholder="숫자입력" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conBtm">
+                        <div class="inner">
+                            <button class="bigBtn basicBtn">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- con// -->
+
+        <footer>
+            <div class="footerWrap">
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- 하단 팝업 최근입금계좌-->
+    <div class="layerPopWrap" id="recentSend">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">최근입금계좌</h3>
+            <div class="popListBox">
+                <ul class="popAccoList">
+                    <li>
+                        <a href="#n">
+                            <div class="text-l">
+                                <!-- 240726 fz20 bold d-flex align-center -> popAccoName 변경 -->
+                                <p class="popAccoName">(088)신한은행   이소진</p>
+                                <!-- ffz16 color-777 num mt15 -> popAccoNum 변경 -->
+                                <p class="popAccoNum">00301-13-0818295</p>
+                            </div>
+                            <div class="text-r">
+                                <p class="fz16 color-777 num mt30">2024-06-20</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <div class="text-l">
+                                <!-- 240726 fz20 bold d-flex align-center -> popAccoName 변경 -->
+                                <p class="popAccoName">(088)신한은행   이소진</p>
+                                <!-- ffz16 color-777 num mt15 -> popAccoNum 변경 -->
+                                <p class="popAccoNum">00301-13-0818295</p>
+                            </div>
+                            <div class="text-r">
+                                <p class="fz16 color-777 num mt30">2024-06-20</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 팝업 내계좌 -->
+    <div class="layerPopWrap" id="mySend">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">내 계좌</h3>
+            <div class="popListBox">
+                <ul class="popAccoList">
+                    <li>
+                        <a href="#n">
+                            <div class="text-l">
+                                <!-- 240726 fz20 bold d-flex align-center -> popAccoName 변경 -->
+                                <p class="popAccoName">비대면S-보통예금</p>
+                                <!-- ffz16 color-777 num mt15 -> popAccoNum 변경 -->
+                                <p class="popAccoNum">00301-13-0818295</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <div class="text-l">
+                                <!-- 240726 fz20 bold d-flex align-center -> popAccoName 변경 -->
+                                <p class="popAccoName">보통예금</p>
+                                <!-- ffz16 color-777 num mt15 -> popAccoNum 변경 -->
+                                <p class="popAccoNum">00301-13-0818295</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

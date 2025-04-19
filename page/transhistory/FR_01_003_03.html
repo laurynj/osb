@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- js -->
+    <script type="text/javascript" src="../../html/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../html/js/slick.js"></script>
+    <script type="text/javascript" src="../../html/js/content.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../html/css/slick.css">
+    <link rel="stylesheet" href="../../html/css/reset.css">
+    <link rel="stylesheet" href="../../html/css/common.css">
+    <link rel="stylesheet" href="../../html/css/style.css">
+
+
+    <title>OSB은행 간편모드</title>
+</head>
+<body>
+    <div class="Wrap">
+        <header>
+            <div class="headerWrap">
+                <div class="headerL">
+                    <button class="backBtn"><span class="hide">뒤로가기</span></button>
+                </div>
+                <div class="headerC"><h1>거래내역 조회</h1></div>
+                <div class="headerR"></div>
+            </div>
+        </header>
+
+
+        <!-- con -->
+        <section>
+            <div class="conWrap transWrap">
+                
+                <!-- 확인할 계좌 -->
+                <div class="myAccountBox">
+                   <p class="depositName">S-보통예금</p>
+                   <p class="accoNum num">00301-13-0818295</p>
+                   <p class="accMoney color-17">
+                        <span class="num bold">50,000,000</span>원
+                    </p>
+                   
+                    <div class="btnWrap">
+                        <!-- <button class="grayBdBtn">
+                            <span class="color-333">계좌변경</span>
+                        </button> -->
+                        <button class="grayBdBtn">
+                            <span class="mainColor">이체</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- 거래기간 검색 -->
+                <div class="dateSelBox">
+                    <div class="dateTabWrap tab3 onCheckBtn">
+                        <button class="toggleButton on" data-action="hide">1개월</button>
+                        <button class="toggleButton" data-action="hide">3개월</button>
+                        <button id="directInputButton" aria-expanded="false" aria-controls="datePickerWrap">
+                            직접입력
+                        </button>
+                    </div>
+                    <div  id="datePickerWrap" class="datePickerWrap">
+                        <div class="startDate">
+                            <input class="input" type="text" value="2024-06-20">
+                        </div>
+                        <span>~</span>
+                        <div class="endDate">
+                            <input class="input" type="text" value="2024-06-21">
+                        </div>
+                    </div>
+                    <div class="dateTabWrap tab2 onCheckBtn mt10">
+                        <button class="on">최신순</button>
+                        <button>과거순</button>
+                    </div>
+                    <div class="btnWrap" id="dateCheckBtn"> 
+                        <button class="dateCheckBtn">조회</button>
+                    </div>
+                </div>
+
+                <!-- 거래내역리스트 -->
+                <div class="historyWrap not">
+                    <div class="detailInfo">
+                        <div class="notList">
+                            <img src="../../html/img/ico-none-acco.png" alt="">
+                            <p>거래내역이 존재하지 않습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- con// -->
+
+        <footer>
+            <div class="footerWrap">
+            </div>
+        </footer>
+    </div>
+
+    <!-- 하단 팝업 거래내역상세-->
+    <div class="layerPopWrap" id="historyItem01">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">조회 계좌 선택</h3>
+            <div class="popListBox">
+                <div class="detailInfo">
+                    <p class="hdlName">김선경</p>
+                    <ul class="detailList">
+                        <li>
+                            <p class="detailLeft">거래일시</p>
+                            <p class="detailRight">2024-01-01 16:01:02</p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">거래유형</p>
+                            <p class="detailRight">스마트폰뱅킹</p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">거래금액</p>
+                            <p class="detailRight">
+                                <span class="feeBlue bold">입금</span> 
+                                <span class="color-17 bold">2,000</span> 원
+                            </p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">거래후잔액</p>
+                            <p class="detailRight">
+                                <span class="color-17 bold">18,000</span> 원
+                            </p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">거래전잔액</p>
+                            <p class="detailRight">
+                                <span class="color-17 bold">178,000</span> 원
+                            </p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">대출이자</p>
+                            <p class="detailRight">
+                                <span class="color-17 bold">0</span> 원
+                            </p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">연체료</p>
+                            <p class="detailRight">
+                                <span class="color-17 bold">0</span> 원
+                            </p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">미수이자</p>
+                            <p class="detailRight">
+                                <span class="color-17 bold">0</span> 원
+                            </p>
+                        </li>
+                        <li>
+                            <p class="detailLeft">비고</p>
+                            <p class="detailRight">
+                               김선경
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 하단 팝업 // -->
+
+    <script>
+        // 직접입력 클릭시 노출
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggleButton');
+            const directInputButton = document.getElementById('directInputButton');
+            const datePickerWrap = document.getElementById('datePickerWrap');
+            const dateCheckBtn = document.getElementById('dateCheckBtn');
+
+            function showDatePicker() {
+                datePickerWrap.classList.add('visible');
+                directInputButton.setAttribute('aria-expanded', 'true');
+                //document.getElementById('startDateInput').focus();
+                dateCheckBtn.classList.add('visible');
+            }
+
+            function hideDatePicker() {
+                datePickerWrap.classList.remove('visible');
+                directInputButton.setAttribute('aria-expanded', 'false');
+                dateCheckBtn.classList.remove('visible');
+            }
+
+            // "직접입력" 버튼 클릭 시 날짜 선택기 표시
+            directInputButton.addEventListener('click', showDatePicker);
+
+            // "1개월" 및 "3개월" 버튼 클릭 시 날짜 선택기 숨기기
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', hideDatePicker);
+            });
+        });
+    </script>
+</body>
+</html>

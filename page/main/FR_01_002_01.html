@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- js -->
+    <script type="text/javascript" src="../../html/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../html/js/slick.js"></script>
+    <script type="text/javascript" src="../../html/js/content.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="../../html/css/slick.css">
+    <link rel="stylesheet" href="../../html/css/reset.css">
+    <link rel="stylesheet" href="../../html/css/common.css">
+    <link rel="stylesheet" href="../../html/css/style.css">
+
+
+    <title>OSB은행 간편모드</title>
+</head>
+<body>
+    <div class="Wrap">
+        <header>
+            <div class="headerWrap">
+                <div class="headerL">
+                    <label for="simpleCheck" class="bold fz18">쉬운 홈</label>
+                    <input id="simpleCheck" name="simpleCheck" type="checkbox" value="1" class="switch ml13">
+                </div>
+                <div class="headerC"><h1>MY</h1></div>
+                <div class="headerR"></div>
+            </div>
+        </header>
+
+
+        <!-- con -->
+        <section>
+            <div class="conWrap mainWrap">
+                <div class="accoTopWrap">
+                    <div class="myAccountWrap not">
+                        <div class="myAccountBox">
+                            <!-- 240726 fz24 bold -> accountNotTit 변경 -->
+                            <p class="accountNotTit">아직 입출금 통장이 없으신가요?</p>
+                            <!-- 240726 fz18 color-777 mt15 bold -> accountNotTxt 변경 -->
+                            <p class="accountNotTxt">은행방문 없이 편리하게 가입하는 
+                                <br>OSB 비대면 입출금 상품!</p>
+                            <div class="btnWrap">
+                                <button><span>비대면 S-보통예금 계좌개설</span></button>
+                                <button><span>기존 계좌 연결하기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accoBtmWrap">
+                    <div class="accoBtmBox">
+                        <div class="accoBtmL">
+                            <a href="#n" class="color-1d">전체 계좌<br>조회</a>
+                        </div>
+                        <div class="accoBtmR">
+                            <a href="#n" class="accoBtmRT openBtn" data-target="#withdraw">
+                                <img src="../../html/img/ico-now.png" alt="">
+                                <span class="color-1d">이체</span>
+                            </a>
+                            <a href="#n" class="accoBtmRB openBtn" data-target="#accoCheck">
+                                <img src="../../html/img/ico-hischeck.png" alt="">
+                                <span class="color-1d">거래내역<br>조회</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- tm22 제거 -->
+                    <div class="footerBanner">
+                        <!-- fz20 color-1d bold 제거 -->
+                        <a href="#n">
+                            예적금 신규 가입하기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- con// -->
+
+        <footer>
+            <div class="footerWrap">
+
+            </div>
+        </footer>
+    </div>
+
+     <!-- 하단 팝업 조회계좌-->
+     <div class="layerPopWrap" id="accoCheck">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">조회 계좌 선택</h3>
+            <div class="popListBox">
+                <ul class="popAccoList">
+                    <li>
+                        <div class="text-l">
+                            <!-- fz20 bold d-flex align-center -> depositName 변경 -->
+                            <p class="depositName"><span class="badge green">입출금</span>비대면S-보통예금</p>
+                            <!-- fz16 color-777 num mt10 -> accoNum 변경 -->
+                            <p class="accoNum">00301-13-0818295</p>
+                        </div>
+                        <div class="text-r">
+                            <!-- fz26 color-1d bold num pt10 -< accMoney 변경, 금액 span ->  -->
+                            <p class="accMoney"><span>20,000,000,000</span>원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-l">
+                            <p class="depositName"><span class="badge blue">예금</span>OSB회전식단정기금</p>
+                            <p class="accoNum">00301-13-0818295</p>
+                        </div>
+                        <div class="text-r">
+                            <p class="accMoney"><span>100,000,000</span>원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-l">
+                            <p class="depositName"><span class="badge deepr">적금</span>프리스타일적금</p>
+                            <p class="accoNum">00301-13-0818295</p>
+                        </div>
+                        <div class="text-r">
+                            <p class="accMoney"><span>30,000,000</span>원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-l">
+                            <p class="depositName"><span class="badge purple">대출</span>직장인신용대출(오리치론)</p>
+                            <p class="accoNum">00301-13-0818295</p>
+                        </div>
+                        <div class="text-r">
+                            <p class="accMoney"><span>4,000,000,000</span>원</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     
+    <!-- 하단 팝업 출금계좌 -->
+    <div class="layerPopWrap" id="withdraw">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">출금 계좌 선택</h3>
+            <div class="popListBox">
+                <ul class="popAccoList">
+                    <li>
+                        <div class="text-l">
+                            <p class="depositName">보통예금</p>
+                            <p class="accoNum">00301-13-0818295</p>
+                        </div>
+                        <div class="text-r">
+                            <!-- fz18 color-777 bold -> fz18 color-777 (bold 제거) -->
+                            <p class="fz18 color-777">출금가능한금액</p>
+                            <p class="accMoney"><span>20,000,000,000</span>원</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-l">
+                            <p class="depositName">비대면S-보통예금</p>
+                            <p class="accoNum">00301-13-0818295</p>
+                        </div>
+                        <div class="text-r">
+                            <!-- fz18 color-777 bold -> fz18 color-777 (bold 제거) -->
+                            <p class="fz18 color-777">출금가능한금액</p>
+                            <p class="accMoney"><span>20,000,000,000</span>원</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 하단 팝업// end -->
+<script>
+    $('.myAccountWrap').slick({
+        slidesToShow : 1,
+        dots: true,
+        infinite: false,
+        arrows: false,
+        speed : 300,
+    });
+    // Add ARIA roles and properties
+    $('.slick-slider').on('init', function(event, slick) {
+        slick.$slides.each(function(index, slide) {
+            $(slide).attr({
+                'role': 'group',
+                'aria-roledescription': 'slide',
+                'aria-label': (index + 1) + ' of ' + slick.slideCount,
+                'tabindex': index === 0 ? 0 : -1
+            });
+        });
+    });
+
+    // After change, update tabindex
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide) {
+        slick.$slides.each(function(index, slide) {
+            $(slide).attr('tabindex', index === currentSlide ? 0 : -1);
+        });
+    });
+
+    // Keyboard navigation for slides
+    $(document).on('keydown', '.slick-slider', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == 37) {
+            $(this).slick('slickPrev');
+        } else if (keyCode == 39) {
+            $(this).slick('slickNext');
+        }
+    });
+
+    // Play/Pause buttons
+    $('#pause').on('click', function() {
+        $('.slick-slider').slick('slickPause');
+    });
+
+    $('#play').on('click', function() {
+        $('.slick-slider').slick('slickPlay');
+    });
+
+    // Trigger the init event to set ARIA attributes on initial load
+    $('.slick-slider').slick('slickGoTo', 0);
+</script>
+</body>
+</html>

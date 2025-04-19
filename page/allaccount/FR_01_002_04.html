@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- js -->
+    <script type="text/javascript" src="../../html/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../html/js/slick.js"></script>
+    <script type="text/javascript" src="../../html/js/content.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../html/css/slick.css">
+    <link rel="stylesheet" href="../../html/css/reset.css">
+    <link rel="stylesheet" href="../../html/css/common.css">
+    <link rel="stylesheet" href="../../html/css/style.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <title>OSB은행 간편모드</title>
+</head>
+<body>
+    <div class="Wrap">
+        <header>
+            <div class="headerWrap">
+                <div class="headerL">
+                    <button class="backBtn"><span class="hide">뒤로가기</span></button>
+                </div>
+                <div class="headerC"><h1>전체계좌조회</h1></div>
+                <div class="headerR"></div>
+            </div>
+        </header>
+
+
+        <!-- con -->
+        <section>
+            <div class="conWrap mainWrap">
+                <div class="accoTopWrap">
+                    <div class="accoHideWrap">
+                        <div class="accoHide">
+                            <span>잔액</span>
+                            <button class="comSmBtn" data-action="hide">숨김</button>
+                        </div>
+                    </div>
+                    <div class="myAccountWrap">
+                        <div class="myAccountBox">
+                            <div class="d-flex justify-between align-center">
+                                <div class="flexL">
+                                    <!-- 240726  depositName -> depositName 수정 -->
+                                    <span class="depositName">S-보통예금</span>
+                                </div>
+                                <div class="flexR">
+                                    <span class="accoBage active">한도제한</span>
+                                    <button class="comSmBtn">설정</button>
+                                </div>
+                            </div>
+                            <!-- 240726  d-flex align-center gap-5 mt5 제거 -->
+                            <div class="accoNumWrap">
+                                <span class="accoNum">00301-13-0818295</span>
+                                <a href="#n">
+                                    <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                </a>
+                            </div>
+                            
+                            <!--잔액-->
+                            <div class="accMoneyWrap balance">
+                                <p class="accMoney">500,000,000</p>
+                                <span>원</span>
+                                <button class="reflBtn">
+                                    <span class="hide">잔액 새로고침</span>
+                                </button>
+                            </div>
+                            <div class="accMoneyWrap noBalance">
+                                <p>잔액숨김</p>
+                            </div>
+
+                            <div class="btnWrap">
+                                <button class="accoBtn tfBtn">
+                                    <span>이체</span>
+                                </button>
+                                <button class="accoBtn htBtn">
+                                    <span>거래내역</span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="myAccountBox">
+                            <div class="d-flex justify-between align-center">
+                                <div class="flexL">
+                                    <span class="depositName">S-보통예금</span>
+                                </div>
+                                <div class="flexR">
+                                    <span class="accoBage active">한도제한</span>
+                                    <button class="comSmBtn">설정</button>
+                                </div>
+                            </div>
+                            <div class="accoNumWrap">
+                                <span class="accoNum">00301-13-0818295</span>
+                                <a href="#n">
+                                    <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                </a>
+                            </div>
+                            
+                            <!--잔액-->
+                            <div class="accMoneyWrap balance">
+                                <p class="accMoney">50,000,000</p>
+                                <span>원</span>
+                                <button class="reflBtn">
+                                    <span class="hide">잔액 새로고침</span>
+                                </button>
+                            </div>
+                            <div class="accMoneyWrap noBalance">
+                                <p>잔액숨김</p>
+                            </div>
+
+                            <div class="btnWrap">
+                                <button class="accoBtn tfBtn">
+                                    <span>이체</span>
+                                </button>
+                                <button class="accoBtn htBtn">
+                                    <span>거래내역</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accoBtmWrap2">
+                    <p class="bold fz18 ml20 pb10 pl20 mainColor">총 <span class="color-sub2">4</span>개</p>
+                    
+                    <div class="accordian">
+                        <div class="accoItem">
+                            <div class="accoHeadWrapper">
+                                <button class="accoHead" aria-expanded="false" aria-controls="accoCon1">
+                                    <div class="accoHeadL">
+                                        <span class="countSel">입출금</span>
+                                        <span class="countNum">2</span>
+                                    </div>
+                                    <div class="accoHeadR">
+                                        <div class="accMoneyWrap balance">
+                                            <span class="accMoney">20,000,000,000</span> 원
+                                        </div>
+                                        <div class="accMoneyWrap noBalance">
+                                            <p>잔액숨김</p>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div id="accoCon1" class="accoCon" hidden>
+                                <div class="myAccountBox">
+                                    <div class="d-flex justify-between align-center">
+                                        <div class="flexL">
+                                            <span class="depositName">S-보통예금</span>
+                                        </div>
+                                        <div class="flexR d-flex gap-10">
+                                            <button class="menuDot"></button>
+                                        </div>
+                                    </div>
+                                    <div class="accoNumWrap">
+                                        <span class="num mainColor fz20">00301-13-0818295</span>
+                                        <a href="#n">
+                                            <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                        </a>
+                                    </div>
+                                    
+                                    <!--잔액-->
+                                    <div class="accMoneyWrap balance">
+                                        <p class="accMoney ">50,000,000</p>
+                                        <span>원</span>
+                                    </div>
+                                    <div class="accMoneyWrap noBalance">
+                                        <p>잔액숨김</p>
+                                    </div>
+        
+                                    <div class="btnWrap btn2 d-flex justify-between">
+                                        <button class="accoBtn tfBtn">
+                                            <span>이체</span>
+                                        </button>
+                                        <button class="accoBtn htBtn">
+                                            <span>거래내역</span>
+                                        </button>
+                                    </div>
+        
+                                </div>
+
+                                <!-- 거래중지일떄 stop Class 추가 -->
+                                <div class="myAccountBox stop">
+                                    <div class="d-flex justify-between align-center">
+                                        <div class="flexL">
+                                            <span class="depositName">복리 정기예금</span>
+                                        </div>
+                                        <div class="flexR d-flex gap-10">
+                                            <span class="accoBage active">한도제한</span>
+                                            <span class="accoBage stop">거래중지</span>
+                                            <button class="menuDot"><span class="hide">계좌설정 열기</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="accoNumWrap">
+                                        <span class="num mainColor fz20">00301-13-0818295</span>
+                                        <a href="#n">
+                                            <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                        </a>
+                                    </div>
+                                    
+                                    <!--잔액-->
+                                    <div class="accMoneyWrap balance">
+                                        <p class="accMoney ">100</p>
+                                        <span>원</span>
+                                    </div>
+                                    <div class="accMoneyWrap noBalance">
+                                        <p>잔액숨김</p>
+                                    </div>
+        
+                                    <div class="btnWrap btn2 d-flex justify-between">
+                                        <button class="accoBtn htBtn">
+                                            <span>거래내역</span>
+                                        </button>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accoItem">
+                            <div class="accoHeadWrapper">
+                                <button class="accoHead" aria-expanded="false" aria-controls="accoCon2">
+                                    <div class="accoHeadL">
+                                        <span class="countSel">예/적금</span>
+                                        <span class="countNum">3</span>
+                                    </div>
+                                    <div class="accoHeadR">
+                                        <div class="accMoneyWrap balance">
+                                            <span class="accMoney">100,000</span> 원
+                                        </div>
+                                        <div class="accMoneyWrap noBalance">
+                                            <p>잔액숨김</p>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div id="accoCon2" class="accoCon" hidden>
+                                <div class="myAccountBox">
+                                    <div class="d-flex justify-between align-center">
+                                        <div class="flexL">
+                                            <span class="depositName">S-보통예금</span>
+                                        </div>
+                                        <div class="flexR d-flex gap-10">
+                                            <button class="menuDot"></button>
+                                        </div>
+                                    </div>
+                                    <div class="accoNumWrap">
+                                        <span class="num mainColor fz20">00301-13-0818295</span>
+                                        <a href="#n">
+                                            <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                        </a>
+                                    </div>
+                                    
+                                    <!--잔액-->
+                                    <div class="accMoneyWrap balance">
+                                        <p class="accMoney ">50,000,000</p>
+                                        <span>원</span>
+                                    </div>
+                                    <div class="accMoneyWrap noBalance">
+                                        <p>잔액숨김</p>
+                                    </div>
+        
+                                    <div class="btnWrap btn2 d-flex justify-between">
+                                        <button class="accoBtn tfBtn">
+                                            <span>이체</span>
+                                        </button>
+                                        <button class="accoBtn htBtn">
+                                            <span>거래내역</span>
+                                        </button>
+                                    </div>
+        
+                                </div>
+
+                                <!-- 거래중지일떄 stop Class 추가 -->
+                                <div class="myAccountBox stop">
+                                    <div class="d-flex justify-between align-center">
+                                        <div class="flexL">
+                                            <span class="depositName">S-보통예금</span>
+                                        </div>
+                                        <div class="flexR d-flex gap-10">
+                                            <span class="accoBage active">한도제한</span>
+                                            <span class="accoBage">거래중지</span>
+                                            <button class="menuDot"><span class="hide">계좌설정 열기</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="accoNumWrap">
+                                        <span class="num mainColor fz20">00301-13-0818295</span>
+                                        <a href="#n">
+                                            <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                        </a>
+                                    </div>
+                                    
+                                    <!--잔액-->
+                                    <div class="accMoneyWrap balance">
+                                        <p class="accMoney ">50,000,000</p>
+                                        <span>원</span>
+                                    </div>
+                                    <div class="accMoneyWrap noBalance">
+                                        <p>잔액숨김</p>
+                                    </div>
+        
+                                    <div class="btnWrap btn2 d-flex justify-between">
+                                        <button class="accoBtn htBtn">
+                                            <span>거래내역</span>
+                                        </button>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accoItem not">
+                            <div class="accoHeadWrapper">
+                                <div class="accoHead">
+                                    <div class="accoHeadL">
+                                        <span class="countSel">대출</span>
+                                        <span class="countNum">0</span>
+                                    </div>
+                                    <div class="accoHeadR">
+                                        <button class="comBtn" tabindex="0">신규</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div id="accoCon3" class="accoCon" hidden>
+                                <div class="myAccountBox loan">
+                                    <div class="d-flex justify-between align-center">
+                                        <div class="flexL">
+                                            <span class="depositName">오예스론</span>
+                                        </div>
+                                        <div class="flexR d-flex gap-10">
+                                            <span class="accoBage active">한도제한</span>
+                                            <button class="menuDot"></button>
+                                        </div>
+                                    </div>
+                                    <div class="accoNumWrap">
+                                        <span class="num mainColor fz20">00301-13-0818295</span>
+                                        <a href="#n">
+                                            <img class="icoCopy" src="../../html/img/ico-copy.png" alt="복사">
+                                        </a>
+                                    </div>
+
+                                    <div class="loanDate">
+                                        <p>
+                                            대출일자 2025-06-17 <br>
+                                            만기일자 2025-06-17
+                                        </p>
+                                    </div>
+                                    <div class="accMoneyWrap balance">
+                                        <p class="accMoney ">100,000,000</p>
+                                        <span>원</span>
+                                    </div>
+                                    <div class="accMoneyWrap noBalance">
+                                        <p>잔액숨김</p>
+                                    </div>
+        
+                                    <div class="btnWrap btn2 d-flex justify-between">
+                                        <button class="accoBtn tfBtn">
+                                            <span>이자납입</span>
+                                        </button>
+                                        <button class="accoBtn tfBtn">
+                                            <span>상환</span>
+                                        </button>
+                                        <button class="accoBtn htBtn">
+                                            <span>거래내역</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- con// -->
+
+        <footer>
+            <div class="footerWrap">
+                
+            </div>
+        </footer>
+    </div>
+
+<script>
+    $('.myAccountWrap').slick({
+        slidesToShow : 1,
+        dots: true,
+        infinite: false,
+        arrows: false,
+        speed : 300,
+    });
+    // Add ARIA roles and properties
+    $('.slick-slider').on('init', function(event, slick) {
+        slick.$slides.each(function(index, slide) {
+            $(slide).attr({
+                'role': 'group',
+                'aria-roledescription': 'slide',
+                'aria-label': (index + 1) + ' of ' + slick.slideCount,
+                'tabindex': index === 0 ? 0 : -1
+            });
+        });
+    });
+
+    // After change, update tabindex
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide) {
+        slick.$slides.each(function(index, slide) {
+            $(slide).attr('tabindex', index === currentSlide ? 0 : -1);
+        });
+    });
+
+    // Keyboard navigation for slides
+    $(document).on('keydown', '.slick-slider', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == 37) {
+            $(this).slick('slickPrev');
+        } else if (keyCode == 39) {
+            $(this).slick('slickNext');
+        }
+    });
+
+    // Play/Pause buttons
+    $('#pause').on('click', function() {
+        $('.slick-slider').slick('slickPause');
+    });
+
+    $('#play').on('click', function() {
+        $('.slick-slider').slick('slickPlay');
+    });
+
+    // Trigger the init event to set ARIA attributes on initial load
+    $('.slick-slider').slick('slickGoTo', 0);
+</script>
+</body>
+</html>

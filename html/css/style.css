@@ -1,0 +1,476 @@
+@charset "utf-8";
+
+.Wrap{width: 100%; height: 100dvh; background:var(--bg-light-gray); display: flex; flex-direction: column; font-size: 1.5rem;}
+.whiteWrap{width: 100%; height: 100dvh; background:var(--bg-white); display: flex; flex-direction: column; font-size: 1.5rem;}
+.Wrap .gray{background: none !important; border-bottom: none !important;}
+
+section{width: 100%; height: calc(100% - 13.3rem); flex:auto 1; overflow-y: auto;}
+.headerWrap{padding: 0 2rem;}
+.conWrap{height: 100%; overflow-x: hidden; position: relative;}
+header{width: 100%; height: 6rem; background: #fff; border-bottom: 1px solid #e4e4e4;}
+footer{width: 100%; height: 7.3rem; background: #fff; position: relative; z-index: 1000;}
+
+/******************** Header ************************/
+.headerWrap{width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: space-between; }
+.headerWrap h1{font-size: 2.4rem; font-weight: 700;}
+.headerWrap .headerL,
+.headerWrap .headerR{position: relative; z-index: 2; display: flex; align-items: center;}
+.headerWrap .headerR .gnbAlramBtn {width: 2.4rem;height: 2.3rem;background: url(../img/ico_gnb_alram.svg) no-repeat;background-size: 100% 100%;margin-left: 1.4rem;flex: 0 0 auto;}
+.headerWrap .headerR .gnbAsideBtn {width: 2.4rem;height: 2.3rem;background: url(../img/ico_gnb_aside.svg) no-repeat;background-size: 100% 100%;margin-left: 1.4rem;flex: 0 0 auto;}
+.headerWrap .headerR .gnbSetBtn {width: 2.8rem;height: 2.8rem;background: url(../img/ico_gnb_set.svg) no-repeat;background-size: 100% 100%;margin-left: 1.4rem;flex: 0 0 auto;}
+.headerWrap .headerC{position: absolute; width: calc(100% - 4rem); text-align: center; z-index: 1;}
+
+/******************** Footer ************************/
+.footerWrap {position: fixed;left: 0;bottom: 0;background: #fff;height: 8.5rem;width: 100%;line-height: 6rem;display: flex;border-radius: 2.4rem 2.4rem 0 0;padding-left: 0;transition: none;min-width: 32rem;border: 1px solid #EEE;border-bottom: none;box-shadow: 0 -10px 15px 0 rgba(0, 16, 32, 0.05);z-index: 3;}
+
+.footerWrap .gnbNav {display: flex;width: 100%;position: relative;padding: 0 2.4rem;border-radius: 2.4rem 2.4rem 0 0;box-sizing: border-box;}
+.footerWrap .gnbNav li {flex: 1;justify-content: center;display: flex;}
+.footerWrap .gnbNav li a {color: #fff;padding: 0;position: relative;}
+.footerWrap .gnbNav li button {color:var(--fc-gray);padding: 0;position: relative;width: 100%; height: 100%;}
+.footerWrap .gnbNav li button:after {content: "";width: 2.4rem;height: 2.4rem;position: absolute;left: 50%;top: 1.3rem;transform: translateX(-50%);background-color: #fff;background-repeat: no-repeat;background-position: center;background-size:2.4rem;}
+.footerWrap .gnbNav li.ico-01 button:after {background-image: url(../img/ico_gnb_home.svg);}
+.footerWrap .gnbNav li.ico-02 button:after {background-image: url(../img/ico_gnb_deposit.svg);}
+.footerWrap .gnbNav li.ico-03 button:after {background-image: url(../img/ico_gnb_loan.svg);}
+.footerWrap .gnbNav li.ico-04 button:after {background-image: url(../img/ico_gnb_menu.svg);}
+.footerWrap .gnbNav li.ico-01 button:active:after {background-image: url(../img/ico_gnb_home_on.svg);}
+.footerWrap .gnbNav li.ico-02 button:active:after {background-image: url(../img/ico_gnb_deposit.svg);}
+.footerWrap .gnbNav li.ico-03 button:active:after {background-image: url(../img/ico_gnb_loan.svg);}
+.footerWrap .gnbNav li.ico-04 button:active:after {background-image: url(../img/ico_gnb_menu.svg);}
+.footerWrap .gnbNav li.ico-01.on button:after {background-image: url(../img/ico_gnb_home_on.svg);}
+.footerWrap .gnbNav li.ico-02.on button:after {background-image: url(../img/ico_gnb_deposit.svg);}
+.footerWrap .gnbNav li.ico-03.on button:after {background-image: url(../img/ico_gnb_loan.svg);}
+.footerWrap .gnbNav li.ico-04.on button:after {background-image: url(../img/ico_gnb_menu.svg);}
+.footerWrap .gnbNav li button > span {position: absolute;display: block; bottom:2rem;left: 50%;transform: translateX(-50%);font-size:var(--fs-ss);font-weight: 700;color: #666;letter-spacing: -0.4px;line-height: 150%;}
+.footerWrap .gnbNav li.on button > span, .footerWrap .gnbNav li button:active > span {color:var(--secondary)}
+
+/******************** 메인 ************************/
+.welcome {margin-bottom: 2rem;line-height: 2.8rem;font-size:var(--fs-ml); margin: 1rem 2rem 0 2rem;}
+.welcome span{font-weight: bold;}
+.welcome .myProBtn {width: 2.4rem;height: 2.3rem;background: url(../img/ico_mypro_detail.svg) no-repeat;background-size: 100% 100%;margin-left: 0.5rem;flex: 0 0 auto;}
+
+.accoTopWrap{padding-top: 2rem;}
+.accoHideWrap{display: flex; justify-content: flex-end; margin-bottom: 1rem; margin:0 2rem;}
+.accoHide{display: flex;}
+.accoHideWrap span{font-size:15px; font-weight: 500; width: 4.5rem; height: 3rem; display: flex; align-items: center; justify-content: center; border: 0; color: #444;}
+
+.comSmBtn{width: 2.4rem;height: 2.4rem;background: url(../img/ico_comsmbtn.svg) no-repeat;background-size: 100% 100%;margin-left: 0.5rem;flex: 0 0 auto;}
+
+/* 뱅킹 탭메뉴 */
+.bankTabMenu { position: relative;display: flex;margin:0 2rem 2rem;}
+.bankTabMenu .tabBtn {color:var(--fc-light-gray);font-size:var(--fs-l); padding-right: 1.5rem;}
+.bankTabMenu .tabBtn.on {color:var(--fc-default);font-weight: 500;}
+
+.accoTopWrap .accMoneyWrap.noBalance p{font-size: 3.2rem;}
+
+.mainWrap .accoNumWrap{margin-top: 0.4rem;}
+.mainWrap .accoTopWrap .accMoneyWrap{margin-top: 3.1rem; letter-spacing: -0.1rem;}
+.accoNumWrap{display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.5rem; letter-spacing: 0.02rem;  color: #0c3356;}
+.depositName{position: relative; font-size:var(--fs-ml); font-weight: 600;; color: #0c3356; padding-right: 2.5rem;}
+.depositName::after{content: '';position: absolute; right: 0; top: 0; width: 2.2rem;height: 2.2rem;background: url('../img/ico_myacco.svg') no-repeat bottom center / 100% 100%; margin-left: 0.5rem;}
+
+p.accoNum, span.accoNum{font-size:var(--fs-m); font-weight: 500; color:var(--fc-gray) !important; letter-spacing: -0.01rem;
+    -webkit-touch-callout: none; /* iOS에서 자동 감지 비활성화 */
+    -webkit-user-select: text; /* 텍스트 선택 가능하도록 설정 */
+}
+.accMoneyWrap{display: flex; align-items: center; margin-top: 3.5rem; letter-spacing: -0.07rem;}
+.accMoneyWrap p{line-height: var(--lnh-ex);}
+.accMoney{font-size:var(--fs-ex); font-weight: 700; color: #1d1d1d; margin-right: 0.3rem;}
+.accMoneyWrap.noBalance p{font-size: 2.4rem; color: #777; font-weight: 500;}
+.accMoneyWrap .accMoney ~ span{display: inline-block; font-size:var(--fs-l); font-weight: 500;}
+/* 나의계좌 메뉴 */
+.accoMenu {background-color: var(--primary);border-radius: 2rem;  margin: 0 2rem;}  
+.accoMenu .accoBtnArea { text-align: center; padding-top:0.5rem;}
+.accoMenu .accoBtnArea .accBtn {width: 2.8rem;height: 2.8rem;background: url(../img/ico_main_accbtn.svg) no-repeat;background-size: 100% 100%;flex: 0 0 auto;}
+.accoMenu .accoMlist { padding: 0.8rem 2.5rem 2rem 2.5rem;}
+.accoMenu .accoMlist ul {display: flex;justify-content: space-between;}
+.accoMenu .accoMlist li {width: calc(25% - 0rem);text-align: center;}
+.accoMenu .accoMlist li.type01 {background: url(../img/ico_main_acc01.svg) no-repeat top center;background-size: 70%; }
+.accoMenu .accoMlist li.type02 {background: url(../img/ico_main_acc02.svg) no-repeat top center;background-size: 70%; }
+.accoMenu .accoMlist li.type03 {background: url(../img/ico_main_acc03.svg) no-repeat top center;background-size: 70%; }
+.accoMenu .accoMlist li.type04 {background: url(../img/ico_main_acc04.svg) no-repeat top center;background-size: 70%; }
+.accoMenu .accoMlist li a{display:block; }
+.accoMenu .accoMlist li a span{display: block; color: var(--fc-white); font-size: var(--fs-ms); line-height: 1.4; padding-top:6rem;}
+/* 나의 계좌 */
+.myAccountWrap.slick-dotted.slick-slider{background:var(--bg-white);  border-radius: 2rem; overflow: hidden; box-shadow: 0px 0px 20px rgba(0, 16, 32, 0.05); }
+.myAccountBox{ padding:2rem 2rem 2rem 3rem; border-bottom: 1px solid var(--bg-gray); }
+.myAccountWrap .slick-list{overflow: visible;}
+
+.accoBage{font-size: 15px; font-weight: 500; border-radius: 15px; border: 1px solid #e9e9e9; color: #777; padding:0 0.823rem; height: 30px; line-height: 28px; text-align: center;  }
+.accoBage.on{border: 1px solid #3984f3; background-color: #3984f3; color: #fff;}
+.accoBage.active{border: 1px solid #eaf5fa; background-color: #eaf5fa; color: #4d6880;}
+.accoBage.stop{border: 1px solid #ccc; color:  #555;}
+
+.myAccountWrap .btnWrap{display: flex;  justify-content: space-between; margin-top: 2.5rem; gap: 1.2rem;}
+.myAccountWrap .btnWrap button{width: 100%;}
+/* slick */
+.myAccountWrap .slick-track{padding-bottom: 4rem;}
+.myAccountWrap.not .slick-track{padding-bottom: 0.8rem;}
+.myAccountWrap .slick-dots{ height: 0.8rem; bottom: 1.5rem; display: flex; align-items: flex-end; justify-content: center;}
+.myAccountWrap .slick-dots li{width: 0.8rem; height: 0.8rem; background: #c4cbd3; border-radius: 50%;}
+.myAccountWrap .slick-dots li.slick-active{width: 2.6rem; background: #3b7bdb; border-radius: 0.5rem;}
+.myAccountWrap .slick-dots li button{width: 100%; height: 100%; padding: 0;}
+.myAccountWrap .slick-dots li button:before{content: ''; display: none;}
+.slick-dotted.slick-slider {margin-bottom: 0 !important;}
+
+/* 로그인 전  */
+.assist-list{display:flex;flex-wrap:wrap;justify-content:space-between;margin:0 2rem;}
+.assist-list li{max-width:50%;width:50%; height: 11rem;margin-top:2rem; border-radius: 1.5rem; box-shadow: var(--bx-s-default);}
+.assist-list li:nth-child(1), .assist-list li:nth-child(2){margin-top: 0;}
+.assist-list li:nth-child(odd){padding-right:1rem;}
+.assist-list li:nth-child(even){padding-left:1rem;}
+.assist-list li a{position:relative;display:block; height: 100%;padding:1rem;border-radius:1.2rem;background-color:#fff;background-size:4.8rem;background-repeat:no-repeat;background-position:right 0.8rem bottom 0.8rem;}
+.assist-list li a:after{content:"";display:block;padding-bottom:8.3rem;}
+.assist-list li a .tit{position:absolute;top:2rem;left:2rem;font-size:var(--fs-m);width:76%;line-height: 1.31;}
+.assist-list li:nth-child(1) a{background-image:url(../img/ico_main_bnr1.svg);}
+.assist-list li:nth-child(2) a{background-image:url(../img/ico_main_bnr2.svg);}
+.assist-list li:nth-child(3) a{background-image:url(../img/ico_main_bnr3.svg);}
+.assist-list li:nth-child(4) a{background-image:url(../img/ico_main_bnr4.svg);}
+
+/* 입출금 계좌 없을 경우 */
+.myAccountWrap.not{margin-bottom: 0;}
+.myAccountWrap.not .myAccountBox {padding: 3.7rem 2rem 4.1rem; }
+.myAccountWrap.not .h269{height: 26.9rem;}
+
+.myAccountWrap.not .myAccountBox .btnWrap {margin-top: 2.8rem; display: block;}
+.myAccountWrap.not .myAccountBox .btnWrap button{width: 100%; height: 60px; line-height: 58px; text-align: center; border-radius: 0.8rem; margin-top: 1.6rem;}
+.myAccountWrap.not .myAccountBox .btnWrap button:first-child{border: 1px solid #0c3356; margin-top: 0;}
+.myAccountWrap.not .myAccountBox .btnWrap button:last-child{border: 1px solid #cdd4da;}
+.myAccountWrap.not .myAccountBox .btnWrap button span{font-size: 2.2rem; font-weight: 700; display: block;}
+.myAccountWrap.not .myAccountBox .btnWrap button:first-child span{color: #0c3356;}
+.myAccountWrap.not .myAccountBox .btnWrap button:last-child span{color: #171717;}
+
+.accountNotTit{font-size: 2.4rem; font-weight: 700;}
+.accountNotTxt{font-size: 1.8rem; color: #777; font-weight: 500; margin-top: 1.5rem; line-height: 1.2;}
+
+.btn2 button{width: 100%;}
+.accoBtn{font-size:var(--fs-ml); line-height:var(--lnh-ml); color: var(--fc-deep-gray); background:var(--bg-light-blue); padding: 1.3rem 1rem; border-radius: 1rem;border: solid 1px var(--bg-light-blue);}
+.accoBtn > span{display: inline-block; font-size:var(--fs-m);color: var(--fc-deep-gray); line-height: 2rem; font-weight: 700; }
+.accoBtn.htBtn {background: var(--bg-white); border: solid 1px #C4CBD3;}
+.accoBtn.tfBtn {}
+
+.accoBtmWrap{padding:2rem 2rem 3rem 2rem;}
+/* 메인중간배너 :대출이어하기,내계좌찾기,상품찿기배너 */
+.accoBnr{width: 100%; background-color: #fff; border-radius: 1.5rem; overflow: visible;  box-shadow: 0px 0px 20px rgba(0, 16, 32, 0.05); }
+.accoBnr strong{display:block;margin-top:0.2rem;font-size:var(--fs-ml);font-weight:700;line-height:var(--lnh-xxxl);}
+.accoBnr span{display:block;font-size:var(--fs-s);line-height:var(--lnh-xl);}
+.accoBnr01{display:block;position:relative;padding:2.5rem 2rem;background:url(../img/bnr_main_01.png) no-repeat 95% 60% / 8.8rem 5.8rem;}
+/* 서비스 바로가기 */
+.favMenu {margin-top: 4rem;}
+.favMenu ul {display: grid;grid-template-columns: 1fr 1fr 1fr  1fr;gap: 2.4rem 1.2rem;margin-top: 2.4rem;}
+.favMenu ul li {position: relative;flex: 1 0 25%;}
+.favMenu ul li a {display: flex;flex-direction: column;align-items: center;gap: 1.2rem 0;text-align: center; font-size: var(--fs-ms); line-height: 1.2;}
+.favMenu ul li a::before, .favMenu ul li a::after {content: '';display: inline-block;width: 7.6rem;height: 7.6rem;}
+.favMenu ul li a::before {border-radius: 50%;background-color: var(--bg-white);box-shadow: 0px 0px 20px rgba(0, 16, 32, 0.05);}
+.favMenu.on ul li a::before {transform: scale(1);}
+.favMenu ul li a::after {position: absolute;top: 0;background-repeat: no-repeat;background-size: 50% 50%;background-position: center;}
+.item1 a::after {background-color: transparent;background-image: url(../img/ico_main_service1.svg);}
+.item2 a::after {background-color: transparent;background-image: url(../img/ico_main_service2.svg);}
+.item3 a::after {background-color: transparent;background-image: url(../img/ico_main_service3.svg);}
+.item4 a::after {background-color: transparent;background-image: url(../img/ico_main_service4.svg);}
+/* 나에게맞는상품 */
+.myPrdWrap { margin: 4rem 0 2rem; display: flex; flex-direction: row; flex-wrap: nowrap;}
+.myPrdWrap .myPrdTitle {width: 15rem; height: 16rem; padding-left: 0.5rem;background: url(../img/ico_myprd.png) no-repeat bottom left / 8.5rem 5.9rem;}
+.myPrdWrap .myPrdTitle a {display: flex;flex-direction: column; height: 16rem;}
+.myPrdWrap .myPrdTitle a strong {display: block; font-size: var(--fs-l); line-height: var(--lnh-xl); margin-top: 1.5rem;} 
+.myPrdWrap .myPrdTitle a span {position: relative; display: inline-block; color: var(--fc-gray); font-size: var(--fs-ss); margin-top: 1rem; padding-right: 2rem;}
+.myPrdWrap .myPrdTitle a span::after {content: '';display: inline-block;position: absolute; top: 0; left:8rem; width: 1.5rem; height: 1.5rem; background: url(../img/ico_arrow_myprd.svg) no-repeat top left;}
+
+.myPrdWrap .myPrdList {display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; width:calc(100% - 15rem); overflow: hidden;}
+.myPrdWrap .myPrdList li{position: relative;width: 17rem; height: 16rem; background-color: var(--bg-white); border-radius: 1.5rem; box-shadow: 208px 0px 20px rgba(0, 16, 32, 0.05); margin-right: 2rem;}
+.myPrdWrap .myPrdList li a{ display: flex;flex-direction: column;gap: 1.2rem 0;height: 100%; padding: 2rem;}
+.myPrdWrap .myPrdList li a strong {display: block; font-size:var(--fs-m); line-height: var(--lnh-default);}
+.myPrdWrap .myPrdList li a>span{ display: block;font-size:var(--fs-s);color: var(--fc-gray); margin-top: 2rem;}
+
+
+.footerBanner{margin-top: 2.2rem;}
+.footerBanner a{font-size: 2rem; color: #1d1d1d; font-weight: bold;}
+
+.popListBox .accMoney{margin-right: 0;}
+
+/* 전체계좌조회 */
+.accoBtmWrap2{padding:3rem 0 0;}
+
+.accoBtmWrap2 .countNum{font-size: 1.8rem; font-weight: 500; padding-bottom: 1rem; padding-left: 2rem; }
+.accordian .accoItem{background:#fff;}
+.accordian .accoItem+.accoItem{margin-top: 1rem;}
+.accordian .accoItem .accoHead{width: 100%; height: 7.8rem; padding:1rem 5.4rem 1rem 2rem; background:url('../img/ico-accordian-down.png') center right 2rem no-repeat; background-size: 1.8rem 1rem; display: flex; align-items: center; justify-content: space-between;}
+.accordian .accoItem.on .accoHead{background:url('../img/ico-accordian-up.png') center right 2rem no-repeat; background-size: 1.8rem 1rem;}
+.accordian .accoItem.not .accoHead{background: none !important; padding: 1.4rem 2rem;}
+.accordian .accoItem.not .accoHead .comBtn{width: 75px; height: 50px; line-height: 48px; padding:0 1rem;}
+.accordian .accoItem .accoHeadL{display:flex; align-items: center; gap: 1rem; font-weight: 700;}
+.accordian .accoItem .accoHeadL span.countSel{font-size:2.2rem; color:#666; line-height: 100%;}
+.accordian .accoItem .accoHeadL span.countNum{display: flex; align-items: center; justify-content: center; background:#90939c; border: 1px solid #90939c;  color: #fff; height:24px; line-height: 22px; padding:0 1.1rem; border-radius: 1.2rem;}
+
+.accordian .accoItem .accoHeadR{display:flex; align-items: center;}
+.accordian .accoItem .accoHeadR .accMoney{color:#1d1d1d; font-size: 2.2rem; margin-right: 0.4rem;}
+.accordian .accoItem .accoHeadR span.num{color: #1d1d1d; margin-right: 0.4rem;}
+.accordian .accoItem .accoHeadR span{color: #171717;}
+
+.accoHeadWrapper .accoHeadR .accMoneyWrap{margin-top: 0; font-size: 2.2rem; color: #171717;}
+.accoHeadWrapper .accoHeadR .accMoneyWrap.noBalance p{font-size: 2.2rem; line-height: 1;}
+
+.accoCon{display: none;} 
+.accoHead[aria-expanded="true"] + .accoCon {display: block;}
+.accoCon .myAccountBox{margin: 0 2rem; min-height: 22.9rem; padding: 2.1rem 2rem 3rem; box-shadow: none; background-color: #f5f8fb; border: 1px solid #f5f8fb; border-radius: 0;}
+.accoCon .myAccountBox .depositName{height: 3rem; line-height: 3rem;}
+.mainWrap .accoCon .accoNumWrap{margin-top: 0.5rem;}
+.accoCon .myAccountBox+.myAccountBox{margin-top: 1rem;}
+.accoCon .myAccountBox:last-child{margin-bottom: 3.1rem;}
+.accoCon .myAccountBox .accMoneyWrap{justify-content: flex-end; margin-top: 1.8rem !important; font-size: 2.6rem;}
+.accoCon .myAccountBox .accMoney{font-size: 2.6rem;}
+
+
+/* 거래중지 */
+.accoCon .myAccountBox.stop{ background: #fafafa; border: 1px solid #eee;}
+.myAccountBox.stop .depositName,
+.myAccountBox.stop .accoNum,
+.myAccountBox.stop .accMoneyWrap,
+.myAccountBox.stop .mainColor,
+.myAccountBox.stop .accMoneyWrap *{color: #aaa !important;}
+
+
+/* 대출 */
+.accoCon .myAccountBox.loan{ background: #fff7f3; border: 1px solid #fff7f3;}
+.accoCon .myAccountBox.loan .accMoneyWrap{margin-top: 0.9rem !important;}
+.mainWrap .accoCon .myAccountBox.loan .accoNumWrap{margin-top: 0.2rem;}
+.mainWrap .accoCon .myAccountBox.loan .btnWrap.btn2{margin-top: 1.3rem;}
+
+
+.flexR{display: flex; gap: 1rem; align-items: center;}
+
+.accoCon .btnWrap.btn2{gap: 0.7rem !important; margin-top: 1.5rem;}
+.accoCon .accoBtn{background: #fff; border: 1px solid #cdd4da; padding:0; height: 50px; line-height: 4.8rem;}
+.accoCon .accoBtn span{display: block; line-height: 4.8rem; padding: 0; background: none;}
+
+.loanDate p{font-size: 1.6rem; color: #666; line-height: 2.4rem; font-weight: 700; margin-top: 1.3rem; }
+
+
+.menuDot{width: 0.4rem; height: 2rem; background: url('../img/ico-view-menu.png') no-repeat; background-position: right center; background-size: 100% 100%; flex: 0 0 auto;}
+
+/********************** 이체 ***************************/
+.conBox{width: 100%; height: 100%; display: flex; justify-content: space-between; flex-direction: column;}
+.conBox .inner{padding: 3.8rem 2rem 2.5rem;}
+
+.accoNum2{font-size: 1.8rem; color: #888; margin-bottom: 0.7rem; font-weight: 500;}
+
+.ingTit{font-size: 2.6rem; font-weight: 700;}
+.ingTit span{font-size: 2.6rem; font-weight: 700;}
+.labelEx{font-size: 1.8rem; color: #3b7bdb; font-weight: 500; margin-top: 0.9rem;}
+p.valueMsg ~ .labelEx{margin-top: 1.8rem;}
+
+.whoSend01{font-size: 2.4rem; color: #171717; font-weight: 500; margin-bottom: 1.3rem;}
+.whoSend02{font-size: 2.6rem; color: #171717; font-weight: 500; margin-bottom: 1rem;}
+.whoSend02 span{font-size: 2,6rem;}
+.whoSend02 .num{font-weight: 700; color: #000;}
+
+.tblWrap.mt62{margin-top: 6.2rem;}
+.tblWrap.mt62 .tbl-form th, 
+.tblWrap.mt62 .tbl-form td{height: 6.1rem;}
+
+.topNavWrap{width: 100%; height: 6.2rem; background-color: #f4f5f6; display: flex; align-items: center; justify-content: space-between; padding:0 2rem; }
+.navName{font-size: 2rem; font-weight: 500; color: #444;}
+.navIng{display: flex; align-items: center; gap: 1rem;}
+.navIng span{display: block; width: 1rem; height: 1rem; border-radius: 50%; background-color: #c4cbd3;}
+.navIng span.on{background-color: #2f74db;}
+.navIng span.on.number{width: 24px; height: 24px; line-height: 22px; text-align: center; font-size: 1.5rem; background-color: #2f74db; border:1px solid #2f74db; color: #fff; font-weight: 500;}
+
+.labelTit{font-size: 2.2rem; padding: 4rem 0 1.6rem; font-weight: 500; color: #000;}
+
+.sendTabWrap{display: flex; width: 100%; border: 1px solid #eaeaea; border-radius: 0.5rem;}
+.sendTabWrap button{font-size: 1.8rem; border-right: 1px solid #eaeaea; height: 56px; line-height: 54px; color:#666; font-weight: 500;}
+.sendTabWrap.tab3 button{width: 33.333%;}
+.sendTabWrap.tab4 button{width: 25%;}
+.sendTabWrap.tab5 button{width: 20%;}
+.sendTabWrap button:last-child{border-right: 0;}
+
+.sendTabWrap button.on{color: #124187; background-color: #e2eeff;}
+
+.sendTabWrap2{display: flex; gap: 0.6rem; justify-content: space-between; width: 100%; border-radius: 0.6rem;}
+.sendTabWrap2 button{font-size: 1.6rem; border: 1px solid #add2f0; height: 50px; line-height: 48px; color:#666; font-weight: 500; border-radius: 0.6rem;}
+.sendTabWrap2.tab5 button{width: 100%;}
+
+.sendTabWrap2 button.on{color: #124187; background-color: #e9fbff;}
+
+.amountIpt{display: flex; gap: 0.4rem;}
+.amountIpt button{display: flex; align-items: center; justify-content: center; width: 9rem; border: 1px solid #0c3356; color: #0c3356; font-weight:700; border-radius: 0.5rem; font-size: 2rem; }
+
+.detailInfoAcco{text-align: center; margin-top: 4rem; padding: 3rem 0 2rem; border-top: 1px solid #ddd;}
+.detailInfoAcco button{position: relative; font-size: 1.6rem; line-height: 2.2rem; color: #777; font-weight: 500; padding-right: 1.8rem; background: url('../img/ico-detail-info-up.png') right center no-repeat; background-size: 1rem auto !important;}
+.detailInfoAcco button.on{background: url('../img/ico-detail-info-down.png') right center no-repeat;}
+.detailInfoBox{display: none;}
+
+.ico-comp{width: 4.4rem;}
+.transferCompWrap .comBtn{height: 5rem;}
+.transferCompWrap .ico-comp{width: 5rem;}
+
+.sendBtmTabBox{width: 100%; height: 20rem; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;}
+.tabCon01 .sendBtmTabBox{display: block;} 
+.tabCon01 .sendBtmTabBox.finish{display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;} 
+.tellNum{font-size: 2rem; color: #333; text-align: center; padding-top: 4.7rem;}
+.sendBtmTabBox .mt27{margin-top: 3rem;}
+
+
+.Certtxt01{font-size: 2rem; margin-top: 3.6rem; line-height: 1.3;}
+
+.sendEndWrap{text-align: center; margin-top: 3.5rem;}
+.sendEndWrap .sendEndTxt01{font-size: 2.2rem; margin-top: 3rem; margin-bottom: 2rem;}
+.sendEndWrap .sendEndTxt02{font-size: 2.8rem; color: #000; font-weight: 500;}
+.sendEndWrap .sendEndTxt02 .num{font-size: 2.8rem; font-weight: 700; color: #000;}
+.sendEndWrap .sendEndTxt02 .color-red{font-size: 2.8rem;}
+
+/*이체팝업*/
+.popAccoName{font-size: 2rem; font-weight: 500; color: #171717; display: flex; align-self: center;}
+.popAccoNum{font-size: 1.6rem; font-weight: 500; color: #777; display: flex; align-self: center; margin-top: 1.5rem;}
+
+
+/******************** 상품가입 ************************/
+.productWrap .accoTopWrap{padding-top: 0;}
+.productWrap .accoBtmWrap2{padding-top: 2.6rem;}
+.productBanner{background-size: 100% 100% !important; text-align: center; padding:4.8rem 1rem 2rem; height: 31.4rem;}
+.productBanner.termDeposit{background:url('../img/term-deposit-bg.png'); border-bottom: 0.1rem solid #d3e5ed;}
+.productBanner.regularDeposit{background:url('../img/regular-deposit-bg.png'); border-bottom: 0.1rem solid #d5e5e2;}
+.productBanner.recurringDeposit{background:url('../img/recurring-deposit-bg.png'); border-bottom: 0.1rem solid #e1deeb;}
+
+/* 정기예금 */
+.productBanner.termDeposit .proExList{margin-top:2.8rem; display: flex; justify-content: center; gap: 3rem}
+.productBanner.termDeposit .proExList .proExImg{width: 8.64rem; height: 8.64rem; border-radius: 50%; background-color: rgba(255,255,255,0.12) !important; display: flex; align-items: center; justify-content: center;}
+.productBanner.termDeposit .proExList li:nth-child(1) .proExImg{background:url('../img/ico-term01.png')center center no-repeat; background-size: 4.4rem auto;}
+.productBanner.termDeposit .proExList li:nth-child(2) .proExImg{background:url('../img/ico-term02.png')center center no-repeat; background-size: 4.4rem auto;}
+.productBanner.termDeposit .proExList li:nth-child(3) .proExImg{background:url('../img/ico-term03.png')center center no-repeat; background-size: 3.4rem auto;}
+
+/* 보통예금 */
+.productBanner.regularDeposit .proExList{margin-top:1.5rem; display: flex; justify-content: center; gap: 3rem;}
+.productBanner.regularDeposit .proExList .proExImg{width: 8.64rem; height: 8.64rem; border-radius: 50%; background-color: rgba(255,255,255,0.12) !important; display: flex; align-items: center; justify-content: center;}
+.productBanner.regularDeposit .proExList li:nth-child(1) .proExImg{background:url('../img/ico-regular01.png')center center no-repeat; background-size: 4.1rem auto;}
+.productBanner.regularDeposit .proExList li:nth-child(2) .proExImg{background:url('../img/ico-regular02.png')center center no-repeat; background-size: 3.9rem auto;}
+
+/* 정기적금 */
+.productBanner.recurringDeposit .proExList{margin-top:1.5rem; display: flex; justify-content: center; gap: 3rem;}
+.productBanner.recurringDeposit .proExList .proExImg{width: 8.64rem; height: 8.64rem; border-radius: 50%; background-color: rgba(255,255,255,0.12) !important; display: flex; align-items: center; justify-content: center;}
+.productBanner.recurringDeposit .proExList li:nth-child(1) .proExImg{background:url('../img/ico-recurring01.png')center center no-repeat; background-size: 3.5rem auto;}
+.productBanner.recurringDeposit .proExList li:nth-child(2) .proExImg{background:url('../img/ico-recurring02.png')center center no-repeat; background-size: 4.2rem auto;}
+.productBanner.recurringDeposit .proSubTit{letter-spacing: -0.06rem;}
+
+.proTit{font-size: 2.8rem; font-weight: 700; color: #fff;}
+.proSubTit{font-size: 2rem;font-weight: 500; color: #fff; padding-top: 0.8rem; line-height: 1.3; letter-spacing: -0.04rem;}
+
+.proExList p{color: #fff; font-size: 1.6rem; line-height: 1.3; font-weight: 500; margin-top: 0.5rem; height: 4.2rem; display: flex; align-items: center; justify-content: center;}
+.productBanner.recurringDeposit .proExList p{align-items: flex-start;}
+
+.titBetWrap{display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.1rem;}
+.titBetWrap .tit01,
+.titBetWrap .txt01{margin-top: 0 !important;}
+.tit01{font-size: 2.2rem; color: #000; font-weight: 500;}
+.tit02{font-size: 2rem; color: #171717; font-weight: 500;}
+.txt01{font-size: 2rem; color: #333; margin-top: 1.2rem; font-weight: 500; line-height: 1.2;}
+.txt02{font-size: 2rem; color: #555; line-height: 1.2; font-weight: 500; letter-spacing: -0.1rem;}
+
+.proGuideWrap, .interestInfoWrap, .careInfoWrap{padding: 0.7rem 2rem 4rem;}
+.proGuideWrap .tit01~.tit01{margin-top: 3.5rem;}
+.interestInfoWrap .tit01{margin-top: 3rem;}
+
+.interestInfoWrap .txt01{margin-top: 1rem;}
+.interestInfoWrap .tblWrap{margin-top: 0.6rem; padding-bottom: 3rem; border-bottom: 0.1rem solid #ddd;}
+.plTxt{padding-left: 1.5rem; position: relative;}
+.plTxt.addEx{margin-top: 1.7rem;}
+.addEx::before{content: '*'; position: absolute; left: 0; top: 0.4rem;}
+.listDot>li::before{content: '·'; position: absolute; left: 0.1rem; top: 0;}
+.listDot>.plTxt{margin-top: 1.1rem;}
+.listDot>.plTxt+.plTxt{margin-top: 1.3rem;}
+
+.interestInfoWrap .tblWrap ~ .tit02{margin-top: 3rem;}
+
+.careInfoWrap{padding-top: 0.4rem; padding-bottom: 5.2rem;} 
+.careInfoWrap .grayBox{margin-top: 1.5rem; margin-bottom: 2.1rem; min-height: 23.8rem;}
+.grayBox{background: #f4f4f4; padding: 2.5rem 1.8rem;}
+.grayBox .listDot li:first-child{margin-top: 0.4rem;}
+.grayBox .listDot li{margin-top:1.9rem;}
+.grayBox .txt02{font-size: 1.8rem;}
+.downloadBtnWrap .downloadBtn~.downloadBtn{margin-top: 1rem;}
+.minH243{min-height: 24.3rem;}
+
+.productJoinWrap{padding:4.2rem 2rem 0;}
+.productJoinWrap .btmBtnWrap{padding: 4rem 0 3.1rem;}
+.productJoinWrap img{width: 13.8rem;}
+.productJoinWrap .txt01{font-size: 1.8rem; margin-top:2.5rem; }
+.productJoinWrap .listDot .txt01{font-size: 1.6rem; margin-top: 2.5rem;}
+
+/******************** 거래내역조회 ************************/
+.transWrap{display: flex; flex-direction: column;}
+
+/* 확인할 계좌 */
+.transWrap .myAccountBox{border-radius: 0; margin:0; box-shadow: none; padding: 3rem 2rem 3.1rem;}
+.transWrap .depositName{font-size:2rem; font-weight: 500; color: #0c3356; }
+.transWrap .accoNum{font-size:2.2rem; font-weight: 500; color: #0c3356; margin-top: 0.9rem;}
+.transWrap .accMoney{font-size: 2.8rem; margin-top:2rem; font-weight: 500; color: #171717;}
+.transWrap .accMoney span{font-weight: bold; color: #1d1d1d; margin-right: 0.3rem;}
+
+.transWrap .myAccountBox .btnWrap{display: flex; justify-content: space-between; gap: 0.9rem; margin-top: 2.8rem;}
+.grayBdBtn{width: 100%; height: 50px; line-height: 48px; text-align: center; border-radius: 1rem; border: 1px solid #cdd4da;}
+.grayBdBtn span{font-size:2rem; display: block; line-height: 48px; font-weight: 700;}
+
+/* 거래기간 검색 */
+.dateSelBox{background:#f4f5f6; padding: 2rem;}
+.dateTabWrap{display: flex; width: 100%; background:#fff; border: 1px solid #eaeaea; border-radius: 0.6rem;}
+.dateTabWrap button{font-size: 1.8rem; height: 56px; line-height: 54px; border-right: 1px solid #eaeaea; color:#666; font-weight: 500;}
+.dateTabWrap.tab3 button{width: 33.333%;}
+.dateTabWrap.tab2 button{width: 50%;}
+.dateTabWrap button:last-child{border-right: 0;}
+
+.dateTabWrap button.on{color: #124187; background-color: #e2eeff;}
+.dateSelBox .btnWrap{margin-top: 2rem;}
+.dateCheckBtn{width: 100%; height: 60px; line-height: 58px; border-radius: 1rem; border: 1px solid #0c3356; color:#0c3356; font-size: 2.2rem; background: #fff; display: flex; justify-content: center; align-items: center; font-weight: 700;}
+
+.datePickerWrap{width: 100%; display: none; align-items: center; margin-top: 1rem;}
+.datePickerWrap > span{display: block; width: 2.4rem; height: 5.6rem; line-height: 5.6rem; flex: 0 0 auto; font-size: 2rem; color: #777; font-weight: 500; text-align: center;}
+.datePickerWrap > div {width: 100%;}
+.datePickerWrap input{width: 100%; font-size: 2rem; color: #1d1d1d; font-weight: 500; height: 5.6rem; padding-left: 5rem; background:url('../img/ico-date.png') left 1.6rem center no-repeat #fff; background-size: 2.7rem auto; }
+.datePickerWrap.visible { display: flex; }
+#dateCheckBtn{display: none;}
+#dateCheckBtn.visible{display: flex;}
+
+/* 거래내역리스트 */
+.historyWrap{background: #fff; padding: 0 2rem; flex: 1 1 auto;}
+.historyWrap.not{ background: #f4f5f6;}
+.historyList{width: 100%;}
+.historyList li{border-bottom: 0.2rem solid #efefef; padding: 3.9rem 0;}
+.historyList li+li{padding: 3.8rem 0;}
+.historyList li a{display: block;}
+.historyList li .text-r{margin-top: 2.5rem;}
+.historyList li:last-child{border-bottom: 0;}
+
+.historyList .text-l{background:url('../img/ico-history-click.png') right center no-repeat; background-size: 1rem auto ;}
+.historyList .dateTxt{font-size: 1.6rem; color:#777; font-weight: 500;}
+.historyList .nameTxt{font-size: 2rem; color: #171717; font-weight: 500; margin-top: 0.6rem;}
+.historyList .accMoneyTxt01{font-size: 2.6rem; color: #171717; font-weight: 500; font-weight: 500;}
+.historyList .accMoneyTxt01 .num{margin-right: 0.4rem;}
+.historyList .accMoneyTxt02{color: #777; font-size: 1.8rem; margin-top: 1.3rem;}
+
+.historyWrap .detailInfo{padding:3.7rem 0 6rem;}
+.historyWrap .loaTransTit{align-items: flex-start;}
+.historyWrap .detailList li:first-child{margin-top: 3.5rem;}
+.historyWrap .detailList li{display: flex; align-items: center; justify-content: space-between; margin-top: 3.7rem;}
+.historyWrap .detailList li .detailLeft{font-size: 1.8rem; font-weight: 500; color: #666;}
+.historyWrap .detailList li .detailRight{font-size: 2rem; font-weight: 500; color: #171717;}
+
+/* 출금/입금 컬러 */
+.feeRed{color: #cb0e14 !important;}
+.feeBlue{color: #3b7bdb !important;}
+
+/* 거래내역상세 팝업 */
+.detailInfo{padding: 3rem 0 4rem;}
+.hdlName{font-size: 2rem; color: #171717; font-weight: 700;}
+.detailList li:first-child{margin-top: 2.2rem;}
+.detailList li{display: flex; align-items: center; justify-content: space-between; margin-top: 2.8rem;}
+.detailList li .detailLeft{font-size: 1.8rem; font-weight: 500; color: #666;}
+.detailList li .detailRight{font-size: 2rem; font-weight: 500; color: #171717;}
+
+/* 대출 거래내역 */
+.loaTransTit{display: flex; align-items: center; justify-content: space-between;}
+.loaTransTit .detailLeft{font-size: 1.6rem; color: #777; font-weight: 500;}
+.loaTransTit .detailRight{font-size: 1.8rem; font-weight: 7500;}
+.loaTransTit .detailRight.feeBlue{color: #206bdc !important;}
+/* 거래내용 없을지 */
+.historyWrap.not .detailInfo{ height: 100%; padding: 3rem 0 5rem; min-height: 30.8rem;}
+.transWrap .notList{padding: 0; height: 100%; }
+.transWrap .notList p{color: #666;}

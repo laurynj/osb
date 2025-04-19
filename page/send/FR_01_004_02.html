@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- js -->
+    <script type="text/javascript" src="../../html/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../../html/js/slick.js"></script>
+    <script type="text/javascript" src="../../html/js/content.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../html/css/slick.css">
+    <link rel="stylesheet" href="../../html/css/reset.css">
+    <link rel="stylesheet" href="../../html/css/common.css">
+    <link rel="stylesheet" href="../../html/css/style.css">
+
+
+    <title>OSB은행 간편모드</title>
+</head>
+<body>
+    <div class="whiteWrap">
+        <header>
+            <div class="headerWrap">
+                <div class="headerL">
+                   <button class="backBtn"><span class="hide">뒤로가기</span></button>
+                </div>
+                <div class="headerC"><h1>이체</h1></div>
+                <div class="headerR"></div>
+            </div>
+        </header>
+
+
+        <!-- con -->
+        <section>
+            <div class="conWrap">
+                <div class="conBox">
+                    <div class="conTop">
+                        <div class="topNavWrap">
+                            <div class="navName">금액 입력</div>
+                            <div class="navIng">
+                                <span class="on"></span>
+                                <span class="on number">2</span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="inner pb0">
+                            <p class="accoNum2">국민은행 00301-13-0818295</p>
+                            <!-- 240726 fz26 bold ->  ingTit -->
+                            <p class="ingTit">
+                                김선경님에게 <span class="color-main">이체하기</span>
+                            </p>
+
+                            <p class="labelTit">출금계좌번호</p>
+                            <div class="selectBox">
+                                <select name="" id="" class="select">
+                                    <option value="0">00301-13-0818295(비대면S-보통)</option>
+                                </select>
+                                <!-- 240726 fz18 color-sub bold mt10 -> labelEx -->
+                                <p class="labelEx">출금 가능금액 : 5,000,000원</p>
+                            </div>
+
+                            <p class="labelTit">이체금액</p>
+                            <div class="sendTabWrap2 tab5">
+                                <button class="on">전액</button>
+                                <button>100만</button>
+                                <button>10만</button>
+                                <button>5만</button>
+                                <button>1만</button>
+                            </div>
+                            <div class="amountIpt mt10">
+                                <input type="text" class="input num flex1 bold" value="1,000,000">
+                                <button class="lineH13">금액<br>정정</button>
+                            </div>
+                            <!-- 240726 fz18 color-sub bold mt10 -> labelEx -->
+                            <p class="labelEx">백만원</p>
+                        </div>
+                    </div>
+                    <div class="conBtm">
+                        <div class="btnWrap2 inner">
+                            <button class="bigBtn cancelBtn">취소</button>
+                            <button class="bigBtn basicBtn openBtn" data-target="#psWarning">
+                                다음
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- con// -->
+
+        <footer>
+            <div class="footerWrap">
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- 하단 팝업 보이스피싱 피해 주의-->
+    <div class="layerPopWrap" id="psWarning">
+        <div class="layerBox">
+            <button class="closeBtn" aria-label="닫기"><span class="hide">닫기</span></button>
+            <h3 class="popTit">보이스피싱 피해 주의</h3>
+            <div class="popListBox">
+                <div class="psWarning">
+                    <img src="../../html/img/ico-pswarning.png" alt="">
+                    <!-- 240726 fz20 color-000 bold mt30 mb15 lineH13 -> psWarningTxt -->
+                    <p class="psWarningTxt1">
+                        <span class="color-red pb5">수사기관, 공공기관</span>의 전화 이체 요청이나 <br>
+                        <span class="color-red">신용등급 상승</span> 등의 이유로 
+                    </p>
+                    <!-- 240726 fz24 color-000 bold -> psWarningTxt2 -->
+                    <p class="psWarningTxt2">
+                        <span class="color-main">송금 요청</span>을 받으셨나요?
+                    </p>
+                    <div class="btnWrap2 inner">
+                        <button class="bigBtn yesBtn">예</button>
+                        <button class="bigBtn basicBtn openBtn" data-target="#psWarning">
+                            아니요
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
